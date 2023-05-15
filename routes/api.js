@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', function(req, res, next) {
-    sql= "SELECT * FROM price";
+    sql= "SELECT * FROM price ORDER BY year DESC, month desc , day desc";
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
